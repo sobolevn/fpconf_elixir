@@ -24,21 +24,3 @@ matrix = %{
 }
 
 Benchmark.measure("large", matrix)
-
-defmodule Weather do
-  use Ecto.Schema
-  import Ecto.Query
-
-  schema "weather" do
-    field :city,    :string
-    field :temp_lo, :integer
-    field :temp_hi, :integer
-  end
-
-  def keyword_query do
-    query = from w in Weather,
-         where: w.city == "Moscow" and w.temp_lo > 0,
-         select: w
-    Repo.all(query)
-  end
-end

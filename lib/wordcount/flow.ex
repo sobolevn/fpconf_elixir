@@ -9,7 +9,7 @@ defmodule WordCount.Flow do
   alias Experimental.Flow  # GenStage is still not merged in 1.4-rc0
 
   def count(source_file) do
-    File.stream!("source.txt")
+    File.stream!(source_file, [], :line)
     |> Flow.from_enumerable()
     |> Flow.flat_map(&String.split/1)
     |> Flow.partition()  # here's where the magic happens
