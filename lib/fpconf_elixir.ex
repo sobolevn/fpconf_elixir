@@ -1,0 +1,2 @@
+defmodule FPConfElixir do
+end

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Benchee Report</title>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  </head>
+  <body>
+
+    <div class="header">
+      <h1>benchee report</h1>
+      
+      <span class="version-note">
+        Elixir 1.3.2, Erlang 19.0.2
+      </span>
+    </div>
+
+    <article>
+      <h2>
+        Comparison
+        <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#comparison">
+          <i
+          class="benchee-help-icon icon-question-circle-o"
+          title="Comparisons of the different benchmarking jobs.
+  For Iterations per Second higher is better, the black whiskers denote standard deviation. otherwise it is runtime so lower is better.
+  The Box Plot shows a distribution of run times with the median and outliers."
+          ></i>
+        </a>
+      </h2>
+      <section>
+        <h3>Data Table</h3>
+        <table>
+          <thead>
+            <tr>
+              <th class="text-left">Name</th>
+              <th>Iterations per Second</th>
+              <th>Average</th>
+              <th>Deviation</th>
+              <th>median</th>
+              <th>minimum</th>
+              <th>maximum</th>
+              <th>Sample size</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td class="text-left"><a href="#flow">flow</a></td>
+                <td>4.86</td>
+                <td>205642.08 μs</td>
+                <td>±4.99%</td>
+                <td>202799.00 μs</td>
+                <td>193519.00 μs</td>
+                <td>245798.00 μs</td>
+                <td>25</td>
+              </tr>
+            
+              <tr>
+                <td class="text-left"><a href="#lazy">lazy</a></td>
+                <td>4.43</td>
+                <td>225626.39 μs</td>
+                <td>±2.57%</td>
+                <td>227076.00 μs</td>
+                <td>212887.00 μs</td>
+                <td>234783.00 μs</td>
+                <td>23</td>
+              </tr>
+            
+              <tr>
+                <td class="text-left"><a href="#greedy">greedy</a></td>
+                <td>2.83</td>
+                <td>352881.53 μs</td>
+                <td>±1.01%</td>
+                <td>352623.00 μs</td>
+                <td>346695.00 μs</td>
+                <td>360532.00 μs</td>
+                <td>15</td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </section>
+
+      <section class="benchee-plot-container">
+        <div id="ips-comparison" class="job-count-3 plot"></div>
+      </section>
+
+      <section class="benchee-plot-container">
+        <div id="box-plot" class="job-count-3 plot"></div>
+      </section>
+    </article>
+
+    
+      <article>
+        <h2>
+          <a name="flow"></a>
+          flow
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual run time distribution for flow.
+  Run Times Histpgram shows the distribution of occurences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section class="benchee-plot-container">
+          <div class="sorted-run-times plot" data-job-name="flow"></div>
+        </section>
+        <section class="benchee-plot-container">
+          <div class="raw-run-times plot" data-job-name="flow"></div>
+        </section>
+      </article>
+    
+      <article>
+        <h2>
+          <a name="lazy"></a>
+          lazy
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual run time distribution for lazy.
+  Run Times Histpgram shows the distribution of occurences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section class="benchee-plot-container">
+          <div class="sorted-run-times plot" data-job-name="lazy"></div>
+        </section>
+        <section class="benchee-plot-container">
+          <div class="raw-run-times plot" data-job-name="lazy"></div>
+        </section>
+      </article>
+    
+      <article>
+        <h2>
+          <a name="greedy"></a>
+          greedy
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual run time distribution for greedy.
+  Run Times Histpgram shows the distribution of occurences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section class="benchee-plot-container">
+          <div class="sorted-run-times plot" data-job-name="greedy"></div>
+        </section>
+        <section class="benchee-plot-container">
+          <div class="raw-run-times plot" data-job-name="greedy"></div>
+        </section>
+      </article>
+    
+
+    <script src="assets/javascripts/plotly-1.20.5.min.js"></script>
+    <script src="assets/javascripts/benchee.js"></script>
+
+    <script>
+      var suite      = {"statistics":{"lazy":{"std_dev_ratio":0.025749837206521603,"std_dev_ips":0.11412599854858115,"std_dev":5809.8428455818985,"sample_size":23,"minimum":212887,"median":227076.0,"maximum":234783,"ips":4.432105633649471,"average":225626.39130434784},"greedy":{"std_dev_ratio":0.010102268552028325,"std_dev_ips":0.028627932033172397,"std_dev":3564.9040167848684,"sample_size":15,"minimum":346695,"median":352623.0,"maximum":360532,"ips":2.833812216111054,"average":352881.5333333333},"flow":{"std_dev_ratio":0.04990032640589313,"std_dev_ips":0.24265620346717529,"std_dev":10261.606914786787,"sample_size":25,"minimum":193519,"median":202799.0,"maximum":245798,"ips":4.862817960215147,"average":205642.08}},"sort_order":["flow","lazy","greedy"],"run_times":{"lazy":[227142,227721,233971,212887,222666,231523,231480,217045,220512,231394,234208,222596,227076,225620,221855,227609,217289,224716,218016,227445,227952,234783,223901],"greedy":[351257,352272,348510,353940,352623,356378,346695,350440,354823,355446,352862,350004,360532,349702,357739],"flow":[202407,204528,205984,204725,202049,196812,202340,204368,202020,204525,200731,217836,208694,193519,245798,219045,202194,206681,195839,205034,216225,202242,202799,196453,198204]}};
+      var runTimes   = suite.run_times;
+      var statistics = suite.statistics;
+      var sortOrder  = suite.sort_order;
+
+      var inputHeadline = ""
+
+      drawIpsComparisonChart(statistics, sortOrder, inputHeadline);
+      drawComparisonBoxPlot(runTimes, sortOrder, inputHeadline);
+      drawRawRunTimeCharts(runTimes, inputHeadline);
+      drawRunTimeHistograms(runTimes, inputHeadline);
+    </script>
+  </body>
+</html>
