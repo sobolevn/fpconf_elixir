@@ -60,9 +60,9 @@ Every benchmark generates charts in the `samples_output/` directory.
 
 | Name | ips   | average | deviation | median  |
 |------|-------|---------|-----------|---------|
-|flow  |1.23 K |40.92 μs |±108.34%   |34.00 μs |
+|greedy|1.23 K |40.92 μs |±108.34%   |34.00 μs |
 |lazy  |10.26 K|97.49 μs |±54.48%    |90.00 μs |
-|greedy|24.44 K|810.41 μs|±30.30%    |803.00 μs|
+|flow  |24.44 K|810.41 μs|±30.30%    |803.00 μs|
 
 > Comparison:  
 > greedy       24.44 K  
